@@ -46,7 +46,7 @@ class GlideImage
     {
         $sourceFileName = pathinfo($this->sourceFile, PATHINFO_BASENAME);
 
-        $cacheDir = sys_get_temp_dir();
+        $cacheDir = getenv('TMPDIR') ?: sys_get_temp_dir();
 
         $glideServerParameters = [
             'source' => dirname($this->sourceFile),
